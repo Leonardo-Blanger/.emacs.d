@@ -11,6 +11,7 @@
 ;; Ignore the annoying bell sound
 (setq ring-bell-function 'ignore)
 
+;; Needed in order to type portuguese characters.
 (define-key key-translation-map [dead-tilde] (lookup-key key-translation-map "\C-x8~"))
 (global-set-key (kbd "<dead-acute> c") (lambda () (interactive) (insert-string "ç")))
 
@@ -19,6 +20,12 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c h") 'org-toggle-heading)
+
+;; List tabs keybinding
+(global-set-key (kbd "C-x t l") 'tab-list)
+
+;; Join the current line with the previous one, deleting any indentation space.
+(global-set-key (kbd "M-\"") 'delete-indentation)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -41,7 +48,7 @@
  '(global-auto-revert-mode t)
  '(global-auto-revert-non-file-buffers nil)
  '(global-display-line-numbers-mode t)
- '(global-highlight-parentheses-mode t)
+ '(global-highlight-parentheses-mode nil)
  '(global-subword-mode t)
  '(highlight-tail-colors ((("#1b1e1f" "#1b1e1f") . 0) (("#111c36" "#111c36") . 20)))
  '(ido-enable-flex-matching t)
@@ -51,6 +58,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#131033" "#546A90"))
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(next-screen-context-lines 10)
  '(objed-cursor-color "#e61f44")
  '(package-selected-packages
    '(elpy doom-themes org vterm highlight-operators highlight-numbers highlight-parentheses))
@@ -63,6 +71,9 @@
  '(scroll-conservatively 101)
  '(show-paren-mode nil)
  '(size-indication-mode t)
+ '(tab-bar-close-button-show nil)
+ '(tab-bar-new-button-show nil)
+ '(tab-bar-show 1)
  '(tool-bar-mode nil)
  '(vc-annotate-background "#0c0a20")
  '(vc-annotate-color-map
@@ -95,3 +106,6 @@
 
 ;; Elpy mode by default
 (elpy-enable)
+
+;; Hightlight matching parentheses in programming modes
+(add-hook 'prog-mode-hook 'highlight-parentheses-mode)
