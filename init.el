@@ -43,6 +43,8 @@
    '("1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" default))
  '(delete-by-moving-to-trash t)
  '(delete-selection-mode t)
+ '(dired-listing-switches "-lh")
+ '(electric-pair-mode t)
  '(exwm-floating-border-color "#0f0823")
  '(fci-rule-color "#BA45A3")
  '(global-auto-revert-mode t)
@@ -102,10 +104,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "mononoki Nerd Font Mono" :foundry "UKWN" :slant normal :weight normal :height 113 :width normal)))))
+ '(default ((t (:family "mononoki Nerd Font Mono" :foundry "UKWN" :slant normal :weight normal :height 113 :width normal))))
+ '(info-xref-visited ((t (:inherit info-xref)))))
 
 ;; Elpy mode by default
 (elpy-enable)
 
 ;; Hightlight matching parentheses in programming modes
 (add-hook 'prog-mode-hook 'highlight-parentheses-mode)
+
+;; Abbrev mode turned off by default on programming modes
+(add-hook 'prog-mode-hook (lambda () (abbrev-mode -1)))
