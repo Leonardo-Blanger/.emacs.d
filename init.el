@@ -51,6 +51,7 @@
  '(global-auto-revert-non-file-buffers nil)
  '(global-display-line-numbers-mode t)
  '(global-highlight-parentheses-mode nil)
+ '(global-so-long-mode t)
  '(global-subword-mode t)
  '(highlight-tail-colors ((("#1b1e1f" "#1b1e1f") . 0) (("#111c36" "#111c36") . 20)))
  '(ido-enable-flex-matching t)
@@ -63,7 +64,7 @@
  '(next-screen-context-lines 10)
  '(objed-cursor-color "#e61f44")
  '(package-selected-packages
-   '(elpy doom-themes org vterm highlight-operators highlight-numbers highlight-parentheses))
+   '(flycheck neotree auctex elpy doom-themes org vterm highlight-operators highlight-numbers highlight-parentheses))
  '(pdf-view-midnight-colors (cons "#f2f3f7" "#0c0a20"))
  '(pos-tip-background-color "#2a2931")
  '(pos-tip-foreground-color "#d4d4d6")
