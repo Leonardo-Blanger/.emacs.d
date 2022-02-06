@@ -61,6 +61,7 @@
  '(jdee-db-spec-breakpoint-face-colors (cons "#131033" "#546A90"))
  '(make-backup-files nil)
  '(menu-bar-mode nil)
+ '(mode-line-percent-position '(-3 "%o"))
  '(next-screen-context-lines 10)
  '(objed-cursor-color "#e61f44")
  '(package-selected-packages
