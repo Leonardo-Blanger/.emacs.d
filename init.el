@@ -81,6 +81,11 @@
 ;; Highlight current line on programming modes
 (add-hook 'prog-mode-hook 'hl-line-mode)
 
+;; Org-mode global key-bindings
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -112,7 +117,7 @@
  '(mode-line-percent-position '(-3 "%o"))
  '(next-screen-context-lines 10)
  '(package-selected-packages
-   '(hightlight-parentheses hightlight-numbers yasnippet-snippets which-key vterm use-package try neotree modern-cpp-font-lock magit highlight-parentheses highlight-operators highlight-numbers flycheck elpy doom-themes auto-complete auctex))
+   '(org hightlight-parentheses hightlight-numbers yasnippet-snippets which-key vterm use-package try neotree modern-cpp-font-lock magit highlight-parentheses highlight-operators highlight-numbers flycheck elpy doom-themes auto-complete auctex))
  '(pos-tip-background-color "#2a2931")
  '(pos-tip-foreground-color "#d4d4d6")
  '(scroll-bar-mode nil)
