@@ -36,7 +36,8 @@
 
 (use-package org)
 
-(use-package vterm)
+(use-package vterm
+  :defer t)
 
 (use-package highlight-operators)
 
@@ -47,8 +48,11 @@
 (use-package highlight-indent-guides)
 
 
-;; For switching windows directionally using S-<left>, S-<down>, etc...
-(windmove-default-keybindings)
+;; For switching windows directionally
+(global-set-key (kbd "C-<up>") 'windmove-up)
+(global-set-key (kbd "C-<down>") 'windmove-down)
+(global-set-key (kbd "C-<left>") 'windmove-left)
+(global-set-key (kbd "C-<right>") 'windmove-right)
 
 ;; Ignore the annoying bell sound
 (setq ring-bell-function 'ignore)
@@ -98,7 +102,7 @@
  '(column-number-mode t)
  '(custom-enabled-themes '(doom-dark+))
  '(custom-safe-themes
-   '("1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" default))
+   '("aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8" "1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" default))
  '(delete-by-moving-to-trash t)
  '(delete-selection-mode t)
  '(dired-listing-switches "-lh")
