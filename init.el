@@ -7,7 +7,7 @@
 (global-display-line-numbers-mode t)
 (dolist (mode '(term-mode-hook
 		eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+  (add-hook mode (lambda () (display-line-numbers-mode -1))))
 
 ;; Show column numbers, next to line numbers, in the modeline
 (column-number-mode)
@@ -37,7 +37,7 @@
 ;; instead of bringing the pointer to the center of the screen.
 (setq scroll-conservatively 101)
 
-;; 10 lines of context overlap when scorlling forward
+;; 10 lines of context overlap when scrolling forward
 ;; (`scroll-up-command` "C-v"), or backward (`scroll-down-command` "M-v")
 (setq next-screen-context-lines 10)
 
@@ -53,7 +53,7 @@
 ;; Send files to the trash bin instead of permanentely deleting them
 (setq delete-by-moving-to-trash t)
 
-;; Dired listings are long, show hidden files, and use human readable sizes
+;; Dired listings are long, and use human readable sizes
 (setq dired-listing-switches "-lh")
 
 ;; Makes the Emacs Customize system dump its own code into another file,
@@ -92,7 +92,7 @@
 
 (use-package ivy
   :config
-  (setq ivy-count-format "(%d/%d) ")
+  (setopt ivy-count-format "(%d/%d) ")
   (setq ivy-extra-directories nil)
   (ivy-mode 1))
 
@@ -125,25 +125,9 @@
   (counsel-describe-variable-function #'helpful-variable)
   :bind
   ([remap describe-function] . counsel-describe-function)
-  ([remap describe-command] . helpful-command)
   ([remap describe-variable] . counsel-describe-variable)
-  ([remap describe-key] . helpful-key))  
-
-(use-package projectile
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :after
-  ivy
-  :init
-  (setq projectile-auto-discover nil)
-  :custom
-  ((projectile-completion-system 'ivy))
-  :config
-  (projectile-mode 1))
-
-(use-package counsel-projectile
-  :config
-  (counsel-projectile-mode 1))
+  ([remap describe-command] . helpful-command)
+  ([remap describe-key] . helpful-key))
 
 (use-package magit
   :config
