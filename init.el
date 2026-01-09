@@ -63,6 +63,11 @@
   (make-empty-file custom-file))
 (load custom-file)
 
+;; Remove the built-in Version Control information from the modeline.
+;; We use Magit for version control instead.
+(setq-default mode-line-format
+              (delete '(vc-mode vc-mode) mode-line-format))
+
 ;; Add melpa (stable) to the list of package archives
 (setq package-archives
       '(("melpa-stable" . "https://stable.melpa.org/packages/")
