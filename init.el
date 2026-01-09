@@ -136,7 +136,7 @@
 
 (use-package magit
   :config
-  (setq magit-diff-refine-hunk 'all))
+  (setq magit-diff-refine-hunk 't))
 
 (use-package company
   :hook
