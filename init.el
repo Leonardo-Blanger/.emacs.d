@@ -6,7 +6,8 @@
 ;; Show line numbers everywhere, except for terminal style buffers
 (global-display-line-numbers-mode t)
 (dolist (mode '(term-mode-hook
-		eshell-mode-hook))
+		eshell-mode-hook
+		treemacs-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode -1))))
 
 ;; Show column numbers, next to line numbers, in the modeline
@@ -156,8 +157,8 @@
   :bind
   ("C-c t" . treemacs)
   :config
-  (treemacs-project-follow-mode t)
-  (treemacs-indent-guide-mode t))
+  (treemacs-indent-guide-mode t)
+  (setq treemacs-no-png-images nil))
 
 ;; (use-package lsp-mode
 ;;   :init
