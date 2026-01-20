@@ -140,13 +140,11 @@
 
 (use-package company
   :hook
-  (prog-mode . company-mode)
+  prog-mode
+  text-mode
   :bind
   (:map company-mode
 	("M-/" . company-complete))
-  ;; (:map company-active-map
-  ;; 	(("C-n" . nil)
-  ;; 	 ("C-p" . nil)))
   :config
   (setq company-tooltip-offset-display 'lines)
   (setq company-format-margin-function 'company-text-icons-margin)
@@ -161,75 +159,17 @@
   (treemacs-project-follow-mode t)
   (treemacs-indent-guide-mode t))
 
-
-;; (defun my/lsp-mode-setup()
-;;   (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbos))
-;;   (lsp-headerline-breadcrumb-mode))
-
 ;; (use-package lsp-mode
-;;   :commands
-;;   (lsp lsp-deferred)
-;;   :hook
-;;   (lsp-mode . my/lsp-mode-setup)
 ;;   :init
+;;   (setq gc-cons-threshold 100000000)
+;;   (setq read-process-output-max (* 1024 1024)) ;; 1mb
 ;;   (setq lsp-keymap-prefix "C-c l")
 ;;   :config
-;;   (lsp-enable-which-key-integration t))
-
-;; (use-package company
-;;   :after lsp-mode
-;;   :hook (prog-mode . company-mode)
-;;   :bind
-;;   (:map company-active-map
-;; 	("<tab>" . company-complete-selection))
-;;   (:map lsp-mode-map
-;; 	("<tab>" . company-indent-or-complete-common))
-;;   :custom
-;;   (company-minimum-prefix-length 1)
-;;   (company-idle-delay 0.0))
-
-;; (use-package company-box
-;;   :hook (company-mode . company-box-mode))
-
-;; (use-package lsp-ui
-;;   :hook (lsp-mode . lsp-ui-mode)
-;;   :custom
-;;   (setq lsp-ui-doc-position 'bottom))
-
-;; (use-package lsp-treemacs
-;;   :after lsp)
-
-;; (use-package lsp-ivy
-;;   :after lsp)
-
-;; (use-package evil-nerd-commenter)
-
-;; (use-package eat)
-
-;; (use-package lsp-mode
-;;   :commands
-;;   (lsp lsp-deferred)
-;;   ;; :hook
-;;   ;; (prog-mode . lsp-deferred)
-;;   :init
-;;   (setq lsp-keymap-prefix "C-c l")
-;;   :config
-;;   (lsp-enable-which-key-integration t)
 ;;   (setq lsp-idle-delay 0.500)
-;;   ; For performance improvements
-;;   (setq read-process-output-max (* 1024 1024)) ; 1mb
-;;   (setq gc-cons-threshold 100000000))
-
-;; (use-package lsp-ui
-;;   :after lsp-mode
-;;   :config
-;;   (setq lsp-ui-sideline-show-hover t)
-;;   (setq lsp-ui-sideline-show-code-actions t)
-;;   (setq lsp-ui-doc-show-with-cursor t)
-;;   :bind
-;;   (:map lsp-ui-mode
-;; 	([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
-;; 	([remap xref-find-references] . lsp-ui-peek-find-references)))
+;;   :hook
+;;   (lsp-mode . lsp-enable-which-key-integration)
+;;   :commands
+;;   (lsp lsp-deferred))
 
 ;; ;; optionally
 ;; (use-package lsp-ui :commands lsp-ui-mode)
@@ -243,3 +183,7 @@
 ;; (use-package dap-mode)
 ;; ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
 
+;; ;; optional if you want which-key integration
+;; (use-package which-key
+;;     :config
+;;     (which-key-mode))
