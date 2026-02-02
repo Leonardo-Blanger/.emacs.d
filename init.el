@@ -95,9 +95,9 @@
 ;; =========================================================================
 ;; External packages and their configurations from this point down
 
-(use-package modus-themes
+(use-package ef-themes
   :config
-  (load-theme 'modus-vivendi t))
+  (load-theme 'ef-elea-dark t))
 
 (use-package ivy
   :config
