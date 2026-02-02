@@ -140,7 +140,8 @@
 
 (use-package magit
   :config
-  (setq magit-diff-refine-hunk 't))
+  (setq magit-diff-refine-hunk t)
+  (setq git-commit-cd-to-toplevel t))
 
 (use-package company
   :hook
