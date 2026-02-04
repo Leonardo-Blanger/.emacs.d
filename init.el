@@ -69,9 +69,6 @@
 (setq-default mode-line-format
               (delete '(vc-mode vc-mode) mode-line-format))
 
-(setq ediff-split-window-function 'split-window-horizontally)
-(setq ediff-window-setup-function 'ediff-setup-windows-plain)
-
 ;; Add melpa (stable) to the list of package archives
 (setq package-archives
       '(("melpa-stable" . "https://stable.melpa.org/packages/")
@@ -163,3 +160,8 @@
   :config
   (treemacs-indent-guide-mode t)
   (setq treemacs-no-png-images nil))
+
+(use-package ediff
+  :config
+  (setq ediff-split-window-function 'split-window-horizontally)
+  (setq ediff-window-setup-function 'ediff-setup-windows-plain))
