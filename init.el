@@ -57,6 +57,16 @@
 ;; Dired listings are long, and use human readable sizes
 (setq dired-listing-switches "-lh")
 
+;; Dired asks before creating destination directories when copying files
+(setq dired-create-destination-dirs 'ask)
+
+;; Signal Dired to create a new directory
+;; when a non-existent target file name ends in '/'
+(setq dired-create-destination-dirs-on-trailing-dirsep t)
+
+;; Dired listings show the amount of space taken up by files in the directory
+(setq dired-free-space 'separate)
+
 ;; Makes the Emacs Customize system dump its own code into another file,
 ;; instead of here
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
