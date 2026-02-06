@@ -3,12 +3,8 @@
 (menu-bar-mode -1)    ; Disable the menu bar
 (tooltip-mode -1)     ; Disable tooltip boxes (tips show on minibuffer)
 
-;; Show line numbers everywhere, except for terminal style buffers
+;; Show line numbers everywhere
 (global-display-line-numbers-mode t)
-(dolist (mode '(term-mode-hook
-		eshell-mode-hook
-		treemacs-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode -1))))
 
 ;; Show column numbers, next to line numbers, in the modeline
 (column-number-mode)
@@ -64,7 +60,8 @@
 ;; when a non-existent target file name ends in '/'
 (setq dired-create-destination-dirs-on-trailing-dirsep t)
 
-;; Dired listings show the amount of space taken up by files in the directory
+;; Dired listings show the amount of space taken up by files
+;; in the directory
 (setq dired-free-space 'separate)
 
 ;; Makes the Emacs Customize system dump its own code into another file,
