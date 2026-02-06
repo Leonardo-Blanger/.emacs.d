@@ -79,11 +79,12 @@
 (setq-default mode-line-format
               (delete '(vc-mode vc-mode) mode-line-format))
 
-;; Add melpa (stable) to the list of package archives
+;; Where Emacs pulls packages from
 (setq package-archives
-      '(("melpa-stable" . "https://stable.melpa.org/packages/")
-	("nongnu" . "https://elpa.nongnu.org/nongnu/")
-	("gnu" . "https://elpa.gnu.org/packages/")))
+      '(("nongnu" . "https://elpa.nongnu.org/nongnu/")
+	("gnu" . "https://elpa.gnu.org/packages/")
+	;; ("melpa-stable" . "https://stable.melpa.org/packages/")
+	))
 
 ;; Initialize Emacs package management system
 (require 'package)
@@ -121,11 +122,6 @@
   (("C-s" . swiper)
    ("C-r" . swiper)))
 
-(use-package ivy-rich
-  :after (ivy counsel swiper)
-  :config
-  (ivy-rich-mode 1))
-
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
@@ -133,17 +129,6 @@
   :config
   (setq which-key-idle-delay 1)
   (which-key-mode))
-
-(use-package helpful
-  :after counsel
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . counsel-describe-function)
-  ([remap describe-variable] . counsel-describe-variable)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-key] . helpful-key))
 
 (use-package magit
   :config
@@ -161,15 +146,6 @@
   (setq company-tooltip-offset-display 'lines)
   (setq company-format-margin-function 'company-text-icons-margin)
   (setq company-show-quick-access t))
-
-(use-package treemacs
-  :commands
-  (treemacs)
-  :bind
-  ("C-c t" . treemacs)
-  :config
-  (treemacs-indent-guide-mode t)
-  (setq treemacs-no-png-images nil))
 
 (use-package ediff
   :config
