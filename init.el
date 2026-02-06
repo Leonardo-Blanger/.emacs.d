@@ -89,6 +89,16 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
+;; Print startup time and number of garbage collections
+;; in the minibuffer on launch.
+(defun my/display-startup-time()
+  (message "Emacs loaded in %s with %d garbage collections."
+	   (format "%.2f seconds"
+		   (float-time (time-subtract
+				after-init-time before-init-time)))
+	   gcs-done))
+(add-hook 'emacs-startup-hook #'my/display-startup-time)
+
 ;; Make sure use-package is loaded
 (require 'use-package)
 
