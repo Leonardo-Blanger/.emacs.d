@@ -110,6 +110,13 @@
 ;; ===================================================================
 ;; External packages and their configurations from this point down
 
+(use-package gcmh
+  :config
+  ;; Dynamic adjustment of the garbage collection threshold.
+  ;; Tries to improve speed when activelly interacting with Emacs,
+  ;; while keeping memory usage low when idle.
+  (gcmh-mode 1))
+
 (use-package ef-themes
   :config
   (load-theme 'ef-elea-dark t))
