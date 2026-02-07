@@ -107,27 +107,20 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 
-;; use-package defers loading packages until they are needed, unless
-;; explicitly requested otherwise (i.e., with :demand)
-(setq use-package-always-defer t)
-
 ;; ===================================================================
 ;; External packages and their configurations from this point down
 
 (use-package ef-themes
-  :demand
   :config
   (load-theme 'ef-elea-dark t))
 
 (use-package ivy
-  :demand
   :config
   (setopt ivy-count-format "(%d/%d) ")
   (setq ivy-extra-directories nil)
   (ivy-mode 1))
 
 (use-package counsel
-  :demand
   :config
   (counsel-mode 1))
 
@@ -137,7 +130,6 @@
    ("C-r" . swiper)))
 
 (use-package which-key
-  :demand
   :config
   (setq which-key-idle-delay 1)
   (which-key-mode))
