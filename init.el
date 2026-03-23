@@ -121,16 +121,6 @@
   :config
   (load-theme 'ef-elea-dark t))
 
-(use-package ivy
-  :config
-  (setopt ivy-count-format "(%d/%d) ")
-  (setq ivy-extra-directories nil)
-  (ivy-mode 1))
-
-(use-package counsel
-  :config
-  (counsel-mode 1))
-
 (use-package swiper
   :bind
   (("C-s" . swiper)
@@ -170,3 +160,19 @@
   :config
   (setq ediff-split-window-function 'split-window-horizontally)
   (setq ediff-window-setup-function 'ediff-setup-windows-plain))
+
+(use-package vertico
+  :bind
+  (:map vertico-map
+	;; Restore TAB completion in the minibuffer
+	("TAB" . minibuffer-complete))
+  :config
+  (vertico-mode))
+
+(use-package marginalia
+  :config
+  (marginalia-mode))
+
+;; (use-package consult)
+;; (use-package orderless)
+;; (use-package embark)
