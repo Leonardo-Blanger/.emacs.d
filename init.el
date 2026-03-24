@@ -165,12 +165,15 @@
   :bind
   (:map vertico-map
 	;; Restore TAB completion in the minibuffer
-	("TAB" . minibuffer-complete))
-  :config
+	("TAB" . minibuffer-complete)
+	;; Faster directory navigation
+	("RET" . vertico-directory-enter)
+	("DEL" . vertico-directory-delete-char))
+  :init
   (vertico-mode))
 
 (use-package marginalia
-  :config
+  :init
   (marginalia-mode))
 
 ;; (use-package consult)
