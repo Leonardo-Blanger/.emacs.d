@@ -176,6 +176,11 @@
   :init
   (marginalia-mode))
 
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  ;; Needed for TRAMP hostname completion. See the info manual.
+  (completion-category-overrides '((file (styles partial-completion)))))
+
 ;; (use-package consult)
-;; (use-package orderless)
 ;; (use-package embark)
