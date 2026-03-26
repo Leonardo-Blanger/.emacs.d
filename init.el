@@ -121,11 +121,6 @@
   :config
   (load-theme 'ef-elea-dark t))
 
-(use-package swiper
-  :bind
-  (("C-s" . swiper)
-   ("C-r" . swiper)))
-
 (use-package which-key
   :config
   (setq which-key-idle-delay 1)
@@ -182,5 +177,11 @@
   ;; Needed for TRAMP hostname completion. See the info manual.
   (completion-category-overrides '((file (styles partial-completion)))))
 
-;; (use-package consult)
+(use-package consult
+  :bind
+  (("C-x b" . consult-buffer)
+   ("M-g i" . consult-imenu)
+   ("C-s" . consult-line)
+   ("C-r" . consult-line)))
+
 ;; (use-package embark)
