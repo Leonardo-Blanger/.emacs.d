@@ -119,7 +119,7 @@
 
 (use-package ef-themes
   :config
-  (load-theme 'ef-elea-dark t))
+  (load-theme 'ef-bio t))
 
 (use-package which-key
   :config
