@@ -178,10 +178,18 @@
   (completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package consult
+  :init
+  (setq xref-show-xrefs-function #'consult-xref)
   :bind
   (("C-x b" . consult-buffer)
+   ("C-x 4 b" . consult-buffer-other-window)
+   ("C-x t b" . consult-buffer-other-tab)
+   ("M-y" . consult-yank-replace)
    ("M-g i" . consult-imenu)
+   ("M-g I" . consult-imenu-multi)
    ("C-s" . consult-line)
-   ("C-r" . consult-line)))
+   ("C-r" . consult-line)
+   ("M-s g" . consult-grep)
+   ("M-s f" . consult-find)))
 
 ;; (use-package embark)
