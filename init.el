@@ -192,4 +192,9 @@
    ("M-s g" . consult-grep)
    ("M-s f" . consult-find)))
 
-;; (use-package embark)
+(use-package embark
+  :bind
+  ("C-." . embark-act))
+
+(use-package embark-consult
+  :after consult embark)
